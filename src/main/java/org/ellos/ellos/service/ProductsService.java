@@ -68,8 +68,6 @@ public class ProductsService {
                 String nextLink = json.getAsJsonObject().get("links").getAsJsonObject().get("next").getAsString();
                 json = JsonParser.parseString(getJsonFromUrl(BASE_URL + nextLink));
             }
-
-
         } catch (JsonSyntaxException e) {
             throw new JsonSyntaxException("Could not parse JSON");
         }
