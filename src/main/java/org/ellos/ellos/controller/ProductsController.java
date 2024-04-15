@@ -1,7 +1,7 @@
-package org.ellos.test.controller;
+package org.ellos.ellos.controller;
 
-import org.ellos.test.models.ResponseObject;
-import org.ellos.test.service.ProductsService;
+import org.ellos.ellos.models.ProductReport;
+import org.ellos.ellos.service.ProductsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,13 +17,8 @@ public class ProductsController {
         this.productsService = productsService;
     }
 
-
     @GetMapping
-    public ResponseEntity<ResponseObject> getProducts(@RequestParam String path, @RequestParam(required = false) String filter) {
-        // TODO: Skapa model för JSON som ska returneras (behöver en lista typ med Produkter och Float för genomsnitts pris)
-        // TODO: Skapa Service som returnerar Objekt med bara produkterna och snittpris
-        // TODO: Skapa Test som gör detta så vi inte spmammar API
-
+    public ResponseEntity<ProductReport> getProducts(@RequestParam String path, @RequestParam(required = false) String filter) {
         return ResponseEntity.ok().body(productsService.getProducts(path, filter));
     }
 }

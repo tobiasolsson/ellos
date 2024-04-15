@@ -1,4 +1,4 @@
-package org.ellos.test.models;
+package org.ellos.ellos.models;
 
 public class Product {
     private String sku;
@@ -9,5 +9,17 @@ public class Product {
         this.sku = sku;
         this.name = name;
         this.size = size;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public String getName() {
+        return name;
     }
 }
